@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>What is my IP address? &mdash; ifconfig.co</title>
+    <title>What is my IP address? &mdash; ifconfig.alsace</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="What is my IP address?">
     <link href="//fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -48,34 +48,34 @@
       <div class="pure-u-1 pure-u-md-1-2">
         <p>CLI examples:</p>
         <pre>
-$ curl ifconfig.co
+$ curl ifconfig.alsace
 {{ .IP }}
 
-$ http -b ifconfig.co
+$ http -b ifconfig.alsace
 {{ .IP }}
 
-$ wget -qO- ifconfig.co
+$ wget -qO- ifconfig.alsace
 {{ .IP }}
 
-$ fetch -qo- https://ifconfig.co
+$ fetch -qo- https://ifconfig.alsace
 {{ .IP }}</pre>
 {{ if .IsLookupCountryEnabled }}
         <p>Country lookup:</p>
         <pre>
-$ http ifconfig.co/country
+$ http ifconfig.alsace/country
 {{ .Country }}</pre>
 {{ end }}
 {{ if .IsLookupCityEnabled }}
         <p>City lookup:</p>
         <pre>
-$ http ifconfig.co/city
+$ http ifconfig.alsace/city
 {{ .City }}</pre>
 {{ end }}
       </div>
       <div class="pure-u-1 pure-u-md-1-2">
         <p>JSON output:</p>
         <pre>
-$ http ifconfig.co/json
+$ http ifconfig.alsace/json
 { {{ if .IsLookupCityEnabled }}
     "city": "{{ .City }}",{{ end }}{{ if .IsLookupCountryEnabled }}
     "country": "{{ .Country }}",{{ end }}{{ if .IsLookupAddrEnabled }}
@@ -84,12 +84,12 @@ $ http ifconfig.co/json
 }
 
 # or set Accept header:
-# http ifconfig.co Accept:application/json</pre>
+# http ifconfig.alsace Accept:application/json</pre>
 
 {{ if .IsLookupPortEnabled }}
         <p>Testing port connectivity:</p>
         <pre>
-$ http ifconfig.co/port/8080
+$ http ifconfig.alsace/port/8080
 {
     "ip": "{{ .IP }}",
     "port": 8080,
@@ -102,8 +102,8 @@ $ http ifconfig.co/port/8080
       <div class="pure-u-1-1 footer">
         <p class="footer">
           To force IPv4 lookup you can use
-          the <a href="https://v4.ifconfig.co">v4 subdomain</a>
-          (<a href="http://v6.ifconfig.co">or v6 for IPv6</a>).
+          the <a href="https://v4.ifconfig.alsace">v4 subdomain</a>
+          (<a href="http://v6.ifconfig.alsace">or v6 for IPv6</a>).
         </p>
       </div>
     </div>
